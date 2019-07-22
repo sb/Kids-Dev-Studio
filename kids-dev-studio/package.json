@@ -11,14 +11,141 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.kidsDevStudio"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "new-file",
+					"title": "New File",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "save-file",
+					"title": "Save File",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "open-file",
+					"title": "Open File",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "search",
+					"title": "Search",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "format-file",
+					"title": "Format File",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "undo-action",
+					"title": "Undo",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "redo-action",
+					"title": "Redo",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "cut-text",
+					"title": "Cut",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "copy-text",
+					"title": "Copy",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "paste-text",
+					"title": "Paste",
+					"icon": "media/icons/New.svg"
+				},
+				{
+					"id": "run-program",
+					"title": "Run",
+					"icon": "media/icons/New.svg"
+				}				
+			]
+		},
+		"views": {
+			"new-file": [
+				{
+					"id": "newFile",
+					"name": "New File"
+				}
+			],
+			"save-file": [
+				{
+					"id": "saveFile",
+					"name": "Save File"
+				}
+			],
+			"open-file": [
+				{
+					"id": "openFile",
+					"name": "Open File"
+				}
+			],
+			"search": [
+				{
+					"id": "search",
+					"name": "Search"
+				}
+			],
+			"format-file": [
+				{
+					"id": "formatFile",
+					"name": "Format File"
+				}
+			],
+			"undo-action": [
+				{
+					"id": "undoAction",
+					"name": "Undo"
+				}
+			],
+			"redo-action": [
+				{
+					"id": "redoAction",
+					"name": "Redo"
+				}
+			],
+			"cut-text": [
+				{
+					"id": "cutText",
+					"name": "Cut"
+				}
+			],
+			"copy-text": [
+				{
+					"id": "copyText",
+					"name": "Copy"
+				}
+			],
+			"paste-text": [
+				{
+					"id": "pasteText",
+					"name": "Paste"
+				}
+			],
+			"run-program": [
+				{
+					"id": "runProgram",
+					"name": "Run"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.kidsDevStudio",
+				"title": "Launch Kids Dev studio"
 			}
 		]
 	},
