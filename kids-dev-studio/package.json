@@ -2,6 +2,7 @@
 	"name": "kids-dev-studio",
 	"displayName": "Kids Dev Studio",
 	"description": "",
+	"publisher": "msfthacks",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.36.0"
