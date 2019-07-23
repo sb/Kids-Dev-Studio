@@ -15,13 +15,6 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"themes": [
-            {
-                "label": "Kids Dev Studio UI Theme",
-                "uiTheme": "vs",
-                "path": "./themes/Kids-Dev-Studio-color-theme.json"
-            }
-        ],
 		"viewsContainers": {
 			"activitybar": [
 				{
