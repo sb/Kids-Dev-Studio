@@ -33,52 +33,52 @@
 				{
 					"id": "save-file",
 					"title": "Save File",
-					"icon": "media/icons/New.svg"
+					"icon": "media/icons/Save.svg"
 				},
 				{
 					"id": "open-file",
 					"title": "Open File",
-					"icon": "media/icons/New.svg"
-				},
-				{
-					"id": "search",
-					"title": "Search",
-					"icon": "media/icons/New.svg"
-				},
-				{
-					"id": "format-file",
-					"title": "Format File",
-					"icon": "media/icons/New.svg"
-				},
-				{
-					"id": "undo-action",
-					"title": "Undo",
-					"icon": "media/icons/New.svg"
-				},
-				{
-					"id": "redo-action",
-					"title": "Redo",
-					"icon": "media/icons/New.svg"
-				},
-				{
-					"id": "cut-text",
-					"title": "Cut",
-					"icon": "media/icons/New.svg"
+					"icon": "media/icons/Open.svg"
 				},
 				{
 					"id": "copy-text",
 					"title": "Copy",
-					"icon": "media/icons/New.svg"
+					"icon": "media/icons/Copy.svg"
 				},
 				{
 					"id": "paste-text",
 					"title": "Paste",
-					"icon": "media/icons/New.svg"
+					"icon": "media/icons/Paste2.svg"
 				},
+				{
+					"id": "cut-text",
+					"title": "Cut",
+					"icon": "media/icons/Cut.svg"
+				},
+				{
+					"id": "undo-action",
+					"title": "Undo",
+					"icon": "media/icons/Undo.svg"
+				},
+				{
+					"id": "redo-action",
+					"title": "Redo",
+					"icon": "media/icons/Redo.svg"
+				},
+				{
+					"id": "library",
+					"title": "Library",
+					"icon": "media/icons/Placeholder.svg"	
+				}, 
 				{
 					"id": "run-program",
 					"title": "Run",
-					"icon": "media/icons/New.svg"
+					"icon": "media/icons/Run.svg"
+				},
+                {
+					"id": "search",
+					"title": "Search",
+					"icon": "media/icons/Placeholder.svg"
 				}				
 			]
 		},
@@ -107,10 +107,10 @@
 					"name": "Search"
 				}
 			],
-			"format-file": [
+			"library": [
 				{
-					"id": "formatFile",
-					"name": "Format File"
+					"id": "library",
+					"name": "Library"
 				}
 			],
 			"undo-action": [
