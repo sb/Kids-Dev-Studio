@@ -15,6 +15,18 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": [
+            {
+                "title": "Shortcut Menu Bar configuration",
+                "properties": {
+                    "Save active file": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for save active file"
+					}
+				}
+			}
+		],
 		"viewsContainers": {
 			"activitybar": [
 				{
@@ -146,8 +158,25 @@
 			{
 				"command": "extension.kidsDevStudio",
 				"title": "Launch Kids Dev studio"
+			},
+			{
+				"command": "extension.save",
+				"title": "Save",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				  }
 			}
-		]
+		],
+		"menus": {
+			"view/item/context": [
+			  {
+				"command": "extension.save",
+				"when": "view == saveFile",
+				"group": "inline"
+			  }
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

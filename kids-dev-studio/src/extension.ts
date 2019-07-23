@@ -21,6 +21,29 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+	let commandArray = [
+        //name in package.json , name of command to execute
+        ["extension.save", "workbench.action.files.save"],
+    ];
+
+    let disposableCommandsArray: vscode.Disposable[] = [];
+    // The command has been defined in the package.json file
+    // Now provide the implementation of the command with  registerCommand
+    // The commandId parameter must match the command field in package.json
+
+    commandArray.forEach(command => {
+
+        disposableCommandsArray.push(vscode.commands.registerCommand(command[0], () => {
+            vscode.commands.executeCommand(command[1]).then(function () {
+            });
+        }));
+	});
+	
+	disposableCommandsArray.forEach(i => {
+        context.subscriptions.push(i);
+    });
+
 }
 
 // this method is called when your extension is deactivated
