@@ -3,7 +3,7 @@
 	"displayName": "Kids Dev Studio",
 	"description": "",
 	"publisher": "Visual-Studio-Kids",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -12,7 +12,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.kidsDevStudio"
+		"onCommand:extension.kidsDevStudio",
+		"onView:newFile"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -150,12 +151,45 @@
 				}
 			]
 		},
+
+
 		"commands": [
 			{
 				"command": "extension.kidsDevStudio",
 				"title": "Launch Kids Dev studio"
+			},
+			{
+				"command": "extension.save",
+				"title": "Save",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				  }
+			},
+			{
+				"command": "newFile.new",
+				"title": "New",
+				"icon": {
+					"light": "resources/light/new.svg",
+					"dark": "resources/dark/ne.svg"
+				  }
 			}
-		]
+		],
+		"menus": {
+			"view/title": [
+			  {
+				"command": "extension.save",
+				"when": "view == saveFile",
+				"group": "inline"
+			  },
+			  {
+				"command": "newFile.new",
+				"when": "view == newFile",
+				"group": "inline"
+			  }
+
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

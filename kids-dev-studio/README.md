@@ -2,7 +2,7 @@
 
 The extension that makes coding fun and easy to learn with the full power of Visual Studio Code!
 
-## For Teachers and Instructors 
+## For Teachers and Instructors
 
 This extension for Visual Studio Code simplifies the user interface and serves as a better transition for children learning to code from other platforms or languages like Small Basic to programming in industry standard languages!
 
@@ -18,10 +18,11 @@ Friendly Intellisense: students get more explanations and details as they comple
 Have fun coding to create your next project! Make a cool new game? Create your virtual pet? Draw and paint? To transform your idea into code follow the steps below.
 
 Getting started:
+
 1. Use the commands on the bar on the left side to help write your code!
 2. Click on Library to see what your instructor or teacher provided for you to learn. Each item in the library is one building block of your code.
 3. As you type your code, see the suggestions and explanations that appear. They will help you understand what each part of the code can do and how to write it.
-4. When you have something ready, click run and see the result in action! 
+4. When you have something ready, click run and see the result in action!
 
 ## Requirements
 
@@ -30,7 +31,7 @@ Library requires teacher/instructor created material.
 
 ## Extension Settings
 
-Select "Set color theme" to enjoy the full benefits of this extension. 
+Select "Set color theme" to enjoy the full benefits of this extension.
 
 ## Known Issues
 
