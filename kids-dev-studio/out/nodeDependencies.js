@@ -16,24 +16,7 @@ class DepNodeProvider {
         return element;
     }
     getChildren(element) {
-        if (!this.workspaceRoot) {
-            vscode.window.showInformationMessage('No dependency in empty workspace');
-            return Promise.resolve([]);
-        }
-        if (element) {
-            return Promise.resolve(this.getDepsInPackageJson(path.join(this.workspaceRoot, 'node_modules', element.label, 'package.json')));
-        }
-        else {
-            const packageJsonPath = path.resolve(this.workspaceRoot, 'package.json');
-            if (this.pathExists(packageJsonPath)) {
-                vscode.window.showInformationMessage('Workspace has package.json' + path.resolve("kids-dev-studio", "package.json"));
-                return Promise.resolve(this.getDepsInPackageJson(packageJsonPath));
-            }
-            else {
-                vscode.window.showInformationMessage('Workspace has no package.json' + path.resolve("kids-dev-studio", "package.json"));
-                return Promise.resolve([]);
-            }
-        }
+        return Promise.resolve([]);
     }
     /**
      * Given the path to package.json, read all its dependencies and devDependencies.
