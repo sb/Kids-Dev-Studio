@@ -7,10 +7,8 @@ import { DepNodeProvider } from './nodeDependencies';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	if (vscode.workspace.rootPath !== undefined){
-		const nodeDependenciesProvider = new DepNodeProvider(vscode.workspace.rootPath);
-		vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
-	}
+	const nodeDependenciesProvider = new DepNodeProvider("../kids-dev-studio/");
+	vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
@@ -23,7 +21,13 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
+		if (vscode.workspace.rootPath !== undefined){
+
 		vscode.window.showInformationMessage('Welcome to Kids Dev Studio!');
+		}
+		else {
+			vscode.window.showInformationMessage('Sorry Kids Dev Studio could not be loaded!');
+		}
 	});
 
 	context.subscriptions.push(disposable);
