@@ -7,7 +7,7 @@
 		"activityBar.background": "#e98d15",
 		"activityBarBadge.background": "#e98d15",
 		"activityBar.foreground": "#ffffff",
-		"activityBarBadge.foreground": "#ffffff"
+		"activityBarBadge.foreground": "#ffffff",
 	},
 	"tokenColors": [
 		{
