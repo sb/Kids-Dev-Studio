@@ -2,13 +2,19 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { DepNodeProvider } from './nodeDependencies';
+import { pathToFileURL } from 'url';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	const nodeDependenciesProvider = new DepNodeProvider("../kids-dev-studio/");
-	vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
+	if (vscode.workspace.rootPath !== undefined){
+		const nodeDependenciesProvider = new DepNodeProvider(vscode.workspace.rootPath);
+		vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);	
+	}
+	else {
+		vscode.window.showInformationMessage('could not find current path!');
+	}
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
@@ -18,16 +24,11 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.kidsDevStudio', () => {
-		// The code you place here will be executed every time your command is executed
+	// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
-		if (vscode.workspace.rootPath !== undefined){
+	// Display a message box to the user
+	vscode.window.showInformationMessage('Welcome to Kids Dev Studio!');
 
-		vscode.window.showInformationMessage('Welcome to Kids Dev Studio!');
-		}
-		else {
-			vscode.window.showInformationMessage('Sorry Kids Dev Studio could not be loaded!');
-		}
 	});
 
 	context.subscriptions.push(disposable);

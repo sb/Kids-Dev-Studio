@@ -27,11 +27,13 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 		if (element) {
 			return Promise.resolve(this.getDepsInPackageJson(path.join(this.workspaceRoot, 'node_modules', element.label, 'package.json')));
 		} else {
-			const packageJsonPath = path.join(this.workspaceRoot, 'package.json');
+			const packageJsonPath = path.resolve(this.workspaceRoot, 'package.json');
 			if (this.pathExists(packageJsonPath)) {
+				vscode.window.showInformationMessage('Workspace has package.json' + path.resolve("kids-dev-studio", "package.json"));
+
 				return Promise.resolve(this.getDepsInPackageJson(packageJsonPath));
 			} else {
-				vscode.window.showInformationMessage('Workspace has no package.json');
+				vscode.window.showInformationMessage('Workspace has no package.json' + path.resolve("kids-dev-studio", "package.json"));
 				return Promise.resolve([]);
 			}
 		}
@@ -46,7 +48,7 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 			const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 			const toDep = (moduleName: string, version: string): Dependency => {
-				if (this.pathExists(path.join(this.workspaceRoot, 'node_modules', moduleName))) {
+				if (this.pathExists(path.resolve(this.workspaceRoot, 'node_modules', moduleName))) {
 					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.Collapsed);
 				} else {
 					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.None, {

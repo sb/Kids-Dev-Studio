@@ -7,8 +7,13 @@ const nodeDependencies_1 = require("./nodeDependencies");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
-    const nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider("../kids-dev-studio/");
-    vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
+    if (vscode.workspace.rootPath !== undefined) {
+        const nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider(vscode.workspace.rootPath);
+        vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
+    }
+    else {
+        vscode.window.showInformationMessage('could not find current path!');
+    }
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "kids-dev-studio" is now active!');
@@ -18,12 +23,7 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('extension.kidsDevStudio', () => {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
-        if (vscode.workspace.rootPath !== undefined) {
-            vscode.window.showInformationMessage('Welcome to Kids Dev Studio!');
-        }
-        else {
-            vscode.window.showInformationMessage('Sorry Kids Dev Studio could not be loaded!');
-        }
+        vscode.window.showInformationMessage('Welcome to Kids Dev Studio!');
     });
     context.subscriptions.push(disposable);
     let commandArray = [
