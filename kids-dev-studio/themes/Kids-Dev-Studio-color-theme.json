@@ -4,10 +4,10 @@
 	"colors": {
 		"editor.background": "#f5f5f5",
 		"editor.foreground": "#333333",
-		"activityBar.background": "#f5f5f5",
-		"activityBarBadge.background": "#4D21FC",
-		"activityBar.foreground": "#4D21FC",
-		"activityBarBadge.foreground": "#4D21FC",
+		"activityBar.background": "#e98d15",
+		"activityBarBadge.background": "#e98d15",
+		"activityBar.foreground": "#ffffff",
+		"activityBarBadge.foreground": "#ffffff"
 	},
 	"tokenColors": [
 		{
