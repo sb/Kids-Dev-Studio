@@ -1,17 +1,21 @@
 # Kids Dev Studio
 
-This extension for Visual Studio Code simplifies the user interface and serves as a better transition for children learning to code from something like Small Basic to programming in industry standard languages.
+The extension that makes coding fun and easy to learn with the full power of Visual Studio Code!
 
-## Features
+## For Teachers and Instructors 
 
-@TODO: add some images and animations
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension for Visual Studio Code simplifies the user interface and serves as a better transition for children learning to code from other platforms or languages like Small Basic to programming in industry standard languages!
 
-For example if there is an image subfolder under your extension project workspace:
+Friendly UI: focuses on the main items young students need for working with their code. The UI still remains flexible for students to add other feature options - so no age limits!
 
-\!\[feature X\]\(images/feature-x.png\)
+Library feature: import your study plan to the library to allow students to explore details of specific classes and methods!
+Just import a class file to have the documentation showing in the library pane. They'll also be able to copy methods their code.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Friendly Intellisense: get more explanations and details as you complete your code! 
+
+## For Students
+
+Have fun building
 
 ## Requirements
 
@@ -20,15 +24,7 @@ None yet.
 
 ## Extension Settings
 
-@TODO include any settings
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Select "Set color theme" to enjoy the full benefits of this extensions. 
 
 ## Known Issues
 
@@ -36,6 +32,6 @@ Coming soon!
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.0 - Beta Version
 
 Initial release of Kids Dev Studio!
