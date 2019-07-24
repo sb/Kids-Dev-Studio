@@ -12,8 +12,7 @@ function activate(context) {
         nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider(vscode.workspace.rootPath);
     }
     else {
-        nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider("../kids-dev-studio");
-        vscode.window.showInformationMessage('could not find current path!');
+        nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider("C:\\Users\\t-vimcde\\Hackathon\\Kids-Dev-Studio\\kids-dev-studio");
     }
     vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
     vscode.window.registerTreeDataProvider('newFile', nodeDependenciesProvider);

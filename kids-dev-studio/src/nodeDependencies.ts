@@ -19,7 +19,24 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 	}
 
 	getChildren(element?: Dependency): Thenable<Dependency[]> {
-		return Promise.resolve([]);
+		if (!this.workspaceRoot) {
+			vscode.window.showInformationMessage('No dependency in empty workspace');
+			return Promise.resolve([]);
+		}
+
+		if (element) {
+			return Promise.resolve(this.getDepsInPackageJson(path.join(this.workspaceRoot, 'libraries', element.label, 'package.json')));
+		} else {
+			const packageJsonPath = path.resolve(this.workspaceRoot, 'package.json');
+			if (this.pathExists(packageJsonPath)) {
+				vscode.window.showInformationMessage('Workspace has package.json' + path.resolve("kids-dev-studio", "package.json"));
+
+				return Promise.resolve(this.getDepsInPackageJson(packageJsonPath));
+			} else {
+				vscode.window.showInformationMessage('Workspace has no package.json' + path.resolve("kids-dev-studio", "package.json"));
+				return Promise.resolve([]);
+			}
+		}
 	}
 
 	/**
@@ -30,7 +47,7 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 			const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
 			const toDep = (moduleName: string, version: string): Dependency => {
-				if (this.pathExists(path.resolve(this.workspaceRoot, 'node_modules', moduleName))) {
+				if (this.pathExists(path.resolve(this.workspaceRoot, 'libraries', moduleName))) {
 					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.Collapsed);
 				} else {
 					return new Dependency(moduleName, version, vscode.TreeItemCollapsibleState.None, {
@@ -41,13 +58,13 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 				}
 			};
 
-			const deps = packageJson.dependencies
-				? Object.keys(packageJson.dependencies).map(dep => toDep(dep, packageJson.dependencies[dep]))
+			// const deps = packageJson.dependencies
+			// 	? Object.keys(packageJson.dependencies).map(dep => toDep(dep, packageJson.dependencies[dep]))
+			// 	: [];
+			const devDeps = packageJson.libraries
+				? Object.keys(packageJson.libraries).map(dep => toDep(dep, packageJson.libraries[dep]))
 				: [];
-			const devDeps = packageJson.devDependencies
-				? Object.keys(packageJson.devDependencies).map(dep => toDep(dep, packageJson.devDependencies[dep]))
-				: [];
-			return deps.concat(devDeps);
+			return devDeps;
 		} else {
 			return [];
 		}

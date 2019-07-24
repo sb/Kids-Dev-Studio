@@ -14,8 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
 		nodeDependenciesProvider = new DepNodeProvider(vscode.workspace.rootPath);
 	}
 	else {
-		nodeDependenciesProvider = new DepNodeProvider("../kids-dev-studio");
-		vscode.window.showInformationMessage('could not find current path!');
+		nodeDependenciesProvider = new DepNodeProvider("C:\\Users\\t-vimcde\\Hackathon\\Kids-Dev-Studio\\kids-dev-studio");
 	}
 	
 	vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
