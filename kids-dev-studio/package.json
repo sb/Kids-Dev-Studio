@@ -31,14 +31,29 @@
 					"icon": "media/icons/New.svg"
 				},
 				{
+					"id": "open-file",
+					"title": "Open File",
+					"icon": "media/icons/Open.svg"
+				},
+				{
 					"id": "save-file",
 					"title": "Save File",
 					"icon": "media/icons/Save.svg"
 				},
 				{
-					"id": "open-file",
-					"title": "Open File",
-					"icon": "media/icons/Open.svg"
+					"id": "library",
+					"title": "Library",
+					"icon": "media/icons/Library.svg"	
+				},
+                {
+					"id": "search",
+					"title": "Search",
+					"icon": "media/icons/Search.svg"
+				},
+				{
+					"id": "cut-text",
+					"title": "Cut",
+					"icon": "media/icons/Cut.svg"
 				},
 				{
 					"id": "copy-text",
@@ -51,11 +66,6 @@
 					"icon": "media/icons/Paste.svg"
 				},
 				{
-					"id": "cut-text",
-					"title": "Cut",
-					"icon": "media/icons/Cut.svg"
-				},
-				{
 					"id": "undo-action",
 					"title": "Undo",
 					"icon": "media/icons/Undo.svg"
@@ -64,22 +74,12 @@
 					"id": "redo-action",
 					"title": "Redo",
 					"icon": "media/icons/Redo.svg"
-				},
-				{
-					"id": "library",
-					"title": "Library",
-					"icon": "media/icons/Placeholder.svg"	
 				}, 
 				{
 					"id": "run-program",
 					"title": "Run",
 					"icon": "media/icons/Run.svg"
-				},
-                {
-					"id": "search",
-					"title": "Search",
-					"icon": "media/icons/Placeholder.svg"
-				}				
+				}
 			]
 		},
 		"views": {
@@ -89,22 +89,16 @@
 					"name": "New File"
 				}
 			],
-			"save-file": [
-				{
-					"id": "saveFile",
-					"name": "Save File"
-				}
-			],
 			"open-file": [
 				{
 					"id": "openFile",
 					"name": "Open File"
 				}
 			],
-			"search": [
+			"save-file": [
 				{
-					"id": "search",
-					"name": "Search"
+					"id": "saveFile",
+					"name": "Save File"
 				}
 			],
 			"library": [
@@ -113,16 +107,10 @@
 					"name": "Library"
 				}
 			],
-			"undo-action": [
+			"search": [
 				{
-					"id": "undoAction",
-					"name": "Undo"
-				}
-			],
-			"redo-action": [
-				{
-					"id": "redoAction",
-					"name": "Redo"
+					"id": "search",
+					"name": "Search"
 				}
 			],
 			"cut-text": [
@@ -141,6 +129,18 @@
 				{
 					"id": "pasteText",
 					"name": "Paste"
+				}
+			],
+			"undo-action": [
+				{
+					"id": "undoAction",
+					"name": "Undo"
+				}
+			],
+			"redo-action": [
+				{
+					"id": "redoAction",
+					"name": "Redo"
 				}
 			],
 			"run-program": [
