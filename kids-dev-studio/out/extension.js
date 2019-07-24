@@ -7,8 +7,10 @@ const nodeDependencies_1 = require("./nodeDependencies");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
-    const nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider("../kids-dev-studio/");
+    const nodeDependenciesProvider = new nodeDependencies_1.DepNodeProvider("C:\\Users\\trpatne\\Desktop\\hackathon\\Kids-Dev-Studio\\kids-dev-studio");
     vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
+    vscode.window.registerTreeDataProvider('newFile', nodeDependenciesProvider);
+    vscode.commands.registerCommand('newFile.new', () => vscode.commands.executeCommand('workbench.action.files.newUntitledFile'));
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "kids-dev-studio" is now active!');

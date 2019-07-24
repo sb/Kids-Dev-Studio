@@ -11,22 +11,12 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.kidsDevStudio"
+		"onCommand:extension.kidsDevStudio",
+		"onView:newFile"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"configuration": [
-            {
-                "title": "Shortcut Menu Bar configuration",
-                "properties": {
-                    "Save active file": {
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for save active file"
-					}
-				}
-			}
-		],
+
 		"viewsContainers": {
 			"activitybar": [
 				{
@@ -154,6 +144,8 @@
 				}
 			]
 		},
+
+
 		"commands": [
 			{
 				"command": "extension.kidsDevStudio",
@@ -166,15 +158,29 @@
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
 				  }
+			},
+			{
+				"command": "newFile.new",
+				"title": "New",
+				"icon": {
+					"light": "resources/light/new.svg",
+					"dark": "resources/dark/ne.svg"
+				  }
 			}
 		],
 		"menus": {
-			"view/item/context": [
+			"view/title": [
 			  {
 				"command": "extension.save",
 				"when": "view == saveFile",
 				"group": "inline"
+			  },
+			  {
+				"command": "newFile.new",
+				"when": "view == newFile",
+				"group": "inline"
 			  }
+
 			]
 		}
 	},
