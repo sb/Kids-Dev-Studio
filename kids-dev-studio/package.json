@@ -48,7 +48,7 @@
 				{
 					"id": "paste-text",
 					"title": "Paste",
-					"icon": "media/icons/Paste2.svg"
+					"icon": "media/icons/Paste.svg"
 				},
 				{
 					"id": "cut-text",
