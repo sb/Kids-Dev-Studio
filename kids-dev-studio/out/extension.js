@@ -16,6 +16,7 @@ function activate(context) {
     }
     vscode.window.registerTreeDataProvider('saveFile', nodeDependenciesProvider);
     vscode.window.registerTreeDataProvider('newFile', nodeDependenciesProvider);
+    vscode.window.registerTreeDataProvider('library', nodeDependenciesProvider);
     vscode.commands.registerCommand('newFile.new', () => vscode.commands.executeCommand('workbench.action.files.newUntitledFile'));
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated

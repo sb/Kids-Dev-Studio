@@ -29,11 +29,11 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 		} else {
 			const packageJsonPath = path.resolve(this.workspaceRoot, 'package.json');
 			if (this.pathExists(packageJsonPath)) {
-				vscode.window.showInformationMessage('Workspace has package.json' + path.resolve("kids-dev-studio", "package.json"));
+				//vscode.window.showInformationMessage('Workspace has package.json' + path.resolve("kids-dev-studio", "package.json"));
 
 				return Promise.resolve(this.getDepsInPackageJson(packageJsonPath));
 			} else {
-				vscode.window.showInformationMessage('Workspace has no package.json' + path.resolve("kids-dev-studio", "package.json"));
+				//vscode.window.showInformationMessage('Workspace has no package.json' + path.resolve("kids-dev-studio", "package.json"));
 				return Promise.resolve([]);
 			}
 		}
